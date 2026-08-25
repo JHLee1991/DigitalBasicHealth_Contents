@@ -4929,6 +4929,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6315636021210520635}
+  - component: {fileID: 2943462031838247744}
+  - component: {fileID: 657662924661265142}
   m_Layer: 6
   m_Name: Gemstone_Ruby
   m_TagString: Untagged
@@ -4953,6 +4955,47 @@ Transform:
   - {fileID: 8758259147031692874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2943462031838247744
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149572143896104642}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &657662924661265142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149572143896104642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
+  _coinBody: {fileID: 107839862443136626}
+  _shinyPaticle: {fileID: 7461258499976707134}
 --- !u!1 &7346682395037781418
 GameObject:
   m_ObjectHideFlags: 0
@@ -14755,9 +14798,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c81387949366c641850d65d5ef89a76, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4838702545865529244}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c81387949366c641850d65d5ef89a76, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8473727596267525572}
   m_SourcePrefab: {fileID: 100100000, guid: 5c81387949366c641850d65d5ef89a76, type: 3}
 --- !u!1 &107839862443136626 stripped
 GameObject:
@@ -14785,33 +14825,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5421912, y: 0.38886756, z: 0.54219127}
   m_Center: {x: 0, y: 0.17937216, z: 0.000000074505806}
---- !u!54 &8473727596267525572
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107839862443136626}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!4 &735440667827539144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5c81387949366c641850d65d5ef89a76, type: 3}

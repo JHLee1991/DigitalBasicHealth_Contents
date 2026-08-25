@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7491043124793961183}
+  - component: {fileID: 1218882480367365301}
   m_Layer: 0
   m_Name: Horizontal_Gems
   m_TagString: Untagged
@@ -36,6 +37,24 @@ Transform:
   - {fileID: 2601217452101207575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1218882480367365301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627037421493703571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e115986e52e1147aba3877d0f3f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup
+  _coins:
+  - {fileID: 7346305177649425336}
+  - {fileID: 1578076941590356813}
+  - {fileID: 8770506352692814622}
+  - {fileID: 8063529395222930573}
+  - {fileID: 8835139911007930586}
 --- !u!1001 &2073353938498449851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,6 +112,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+--- !u!114 &1578076941590356813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657662924661265142, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+  m_PrefabInstance: {fileID: 2073353938498449851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
 --- !u!4 &5432375876466601344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315636021210520635, guid: a7b8cefca8a868d44847093a58824407, type: 3}
@@ -160,6 +190,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6315636021210520635, guid: a7b8cefca8a868d44847093a58824407, type: 3}
   m_PrefabInstance: {fileID: 7405911963132229243}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8063529395222930573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657662924661265142, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+  m_PrefabInstance: {fileID: 7405911963132229243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
 --- !u!1001 &7841661201880267086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,6 +263,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6315636021210520635, guid: a7b8cefca8a868d44847093a58824407, type: 3}
   m_PrefabInstance: {fileID: 7841661201880267086}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7346305177649425336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657662924661265142, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+  m_PrefabInstance: {fileID: 7841661201880267086}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
 --- !u!1001 &8113065392289542632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -284,6 +336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6315636021210520635, guid: a7b8cefca8a868d44847093a58824407, type: 3}
   m_PrefabInstance: {fileID: 8113065392289542632}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8770506352692814622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657662924661265142, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+  m_PrefabInstance: {fileID: 8113065392289542632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
 --- !u!1001 &8339756124175604268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -346,3 +409,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6315636021210520635, guid: a7b8cefca8a868d44847093a58824407, type: 3}
   m_PrefabInstance: {fileID: 8339756124175604268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8835139911007930586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 657662924661265142, guid: a7b8cefca8a868d44847093a58824407, type: 3}
+  m_PrefabInstance: {fileID: 8339756124175604268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2870ed8471ec4f84f01360b73ddfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin

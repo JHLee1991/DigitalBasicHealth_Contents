@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 893274565789550992}
+  - component: {fileID: 7644175469948538034}
   m_Layer: 0
-  m_Name: Horizontal_GemLine
+  m_Name: CoinGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +36,23 @@ Transform:
   - {fileID: 4769515515554077924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7644175469948538034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771540910114749243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5811388b5b743ac419f9661477b2e20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup
+  _coinLines:
+  - {fileID: 1116319122771616950}
+  - {fileID: 5699919989550250918}
+  - {fileID: 3648114946142004144}
+  - {fileID: 3832394196272487054}
 --- !u!1001 &2276465688761157635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,7 +63,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3627037421493703571, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_Name
-      value: diamonds1
+      value: CoinLine_1
       objectReference: {fileID: 0}
     - target: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,6 +110,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c677c245c83084a83341513b783d31, type: 3}
+--- !u!114 &1116319122771616950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1218882480367365301, guid: b8c677c245c83084a83341513b783d31, type: 3}
+  m_PrefabInstance: {fileID: 2276465688761157635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e115986e52e1147aba3877d0f3f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup
 --- !u!4 &8674541410252268252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
@@ -107,7 +136,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3627037421493703571, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_Name
-      value: diamonds1 (2)
+      value: CoinLine_3
       objectReference: {fileID: 0}
     - target: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,6 +183,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c677c245c83084a83341513b783d31, type: 3}
+--- !u!114 &3648114946142004144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1218882480367365301, guid: b8c677c245c83084a83341513b783d31, type: 3}
+  m_PrefabInstance: {fileID: 2471035970379058949}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e115986e52e1147aba3877d0f3f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup
 --- !u!4 &5025852356652295642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
@@ -169,7 +209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3627037421493703571, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_Name
-      value: diamonds1 (3)
+      value: CoinLine_4
       objectReference: {fileID: 0}
     - target: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -216,6 +256,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8c677c245c83084a83341513b783d31, type: 3}
+--- !u!114 &3832394196272487054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1218882480367365301, guid: b8c677c245c83084a83341513b783d31, type: 3}
+  m_PrefabInstance: {fileID: 2721635559115683387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e115986e52e1147aba3877d0f3f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup
 --- !u!4 &4769515515554077924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
@@ -231,7 +282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3627037421493703571, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_Name
-      value: diamonds1 (1)
+      value: CoinLine_2
       objectReference: {fileID: 0}
     - target: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,3 +334,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7491043124793961183, guid: b8c677c245c83084a83341513b783d31, type: 3}
   m_PrefabInstance: {fileID: 6913157573427599123}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5699919989550250918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1218882480367365301, guid: b8c677c245c83084a83341513b783d31, type: 3}
+  m_PrefabInstance: {fileID: 6913157573427599123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e115986e52e1147aba3877d0f3f28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinGroup

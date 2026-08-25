@@ -6,7 +6,7 @@ public class EffectManager : MonoBehaviour
 
     [SerializeField] private GameObject _effectParent;
     private HitEffectController[] _effects;
-    public void PlayHitParticle(Vector3 pos)
+    public void PlayCoinHitParticle(Vector3 pos)
     {
         for (int i = 0; i < _effects.Length; ++i)
         {
