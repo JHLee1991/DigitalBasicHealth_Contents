@@ -2,24 +2,21 @@ using UnityEngine;
 
 public class CoinSpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _coinGroupPrefab;
-    [SerializeField] private Transform _coinGroupParentTransform;
     [SerializeField] private Transform _playersParentTransform;
-    private float _spawnInterval = 15f;
-    private float _nextSpawnZ = 0f;
-
+    [SerializeField] private CoinLineGroupObjectPool _coinLineGroupPool;
+    private const float SPAWN_INTERVAL_Z_VALUE = 15f;
+    private float _nextSpawnZ = -8f;
     private void Update()
     {
         while (_playersParentTransform.position.z >= _nextSpawnZ)
         {
-            _nextSpawnZ += _spawnInterval;
+            _nextSpawnZ += SPAWN_INTERVAL_Z_VALUE;
             SpawnCoinGroup(_nextSpawnZ);
         }
     }
 
     private void SpawnCoinGroup(float zPos)
     {
-        CoinLineGroup coinGroup = Instantiate(_coinGroupPrefab, _coinGroupParentTransform).GetComponent<CoinLineGroup>();
-        coinGroup.Init((CoinLine.ECoinDirection)Random.Range(0, (int)CoinLine.ECoinDirection.Count), zPos + _spawnInterval);
+        _coinLineGroupPool.SpawnCoinLineGroup((CoinLine.ECoinDirection)Random.Range(0, (int)CoinLine.ECoinDirection.Count), zPos + SPAWN_INTERVAL_Z_VALUE);
     }
 }

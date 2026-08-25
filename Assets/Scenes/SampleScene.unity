@@ -891,6 +891,52 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &443652992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443652993}
+  - component: {fileID: 443652994}
+  m_Layer: 0
+  m_Name: CoinLineGroupObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &443652993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443652992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1027982031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &443652994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443652992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d560a39beedcf9643a39be01082a0a95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinLineGroupObjectPool
+  _coinLineGroupPrefab: {fileID: 6771540910114749243, guid: 5c64a029806927140a49660f24bf76d7, type: 3}
+  _coinLineGroupParentTransform: {fileID: 1558609924}
 --- !u!1001 &446795644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,9 +1299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46048d9451ca4854c8dc8b590f180b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinSpawnManager
-  _coinGroupPrefab: {fileID: 6771540910114749243, guid: 5c64a029806927140a49660f24bf76d7, type: 3}
-  _coinGroupParentTransform: {fileID: 1558609924}
   _playersParentTransform: {fileID: 536487642}
+  _coinLineGroupPool: {fileID: 443652994}
 --- !u!1 &785082863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1632,7 @@ Transform:
   - {fileID: 357233944}
   - {fileID: 1212863754}
   - {fileID: 604230205}
+  - {fileID: 443652993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1200170214
@@ -2135,7 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558609924}
   m_Layer: 0
-  m_Name: DiamondRoot
+  m_Name: CoinGroupParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
