@@ -5,9 +5,19 @@ namespace GlobalDefine
         Player_1,
         Player_2,
         Player_3,
-        Plyaer_4,
+        Player_4,
         Count
     }
+
+    public enum EGameSceneType
+    {
+        GameScene_1,
+        GameScene_2,
+        GameScene_3,
+        GameScene_4,
+        Count
+    }
+
     public enum BodyPart
     {
         Hips,
