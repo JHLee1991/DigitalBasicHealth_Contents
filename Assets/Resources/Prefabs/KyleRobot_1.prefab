@@ -397,11 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoseBinder
   _animator: {fileID: 2592760691934177455}
   _applyOptionalBones: 0
-  _rotationLerpSpeed: 0
-  _senderIp: 192.168.201.199
-  _senderPort: 53000
-  _receivePort: 55000
-  _playerIndex: 0
+  _rotationLerpSpeed: 6
 --- !u!4 &6177054361742901972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6401711273701861398, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
