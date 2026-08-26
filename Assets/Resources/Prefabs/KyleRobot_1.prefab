@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 901d6e3d171f5a94d87e24da9e436c99, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -359,6 +359,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3432370432978594897}
+    - targetCorrespondingSourceObject: {fileID: 4477978763947009247, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7661584720645985971}
   m_SourcePrefab: {fileID: 100100000, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
 --- !u!4 &266591748130592287 stripped
 Transform:
@@ -370,6 +373,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -637995738860324583, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
   m_PrefabInstance: {fileID: 8255594775270757694}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2592760691934177455 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
+  m_PrefabInstance: {fileID: 8255594775270757694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5527388166993506785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4477978763947009247, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
+  m_PrefabInstance: {fileID: 8255594775270757694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7661584720645985971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527388166993506785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5bddebb1314e75489aff291b8c762c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PoseBinder
+  _animator: {fileID: 2592760691934177455}
+  _applyOptionalBones: 0
+  _rotationLerpSpeed: 0
+  _senderIp: 192.168.201.199
+  _senderPort: 53000
+  _receivePort: 55000
+  _playerIndex: 0
 --- !u!4 &6177054361742901972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6401711273701861398, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
