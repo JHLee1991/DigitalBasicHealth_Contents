@@ -21,10 +21,10 @@ public class PlayerSpawnManager : MonoBehaviour
         switch (eGameSceneType)
         {
             case GlobalDefine.EGameSceneType.GameScene_1:
-                Instantiate(_player_1_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_1, new Vector3(-2, 0, INIT_Z_VALUE));
-                Instantiate(_player_2_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_2, new Vector3(0, 0, INIT_Z_VALUE));
-                Instantiate(_player_3_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_3, new Vector3(2, 0, INIT_Z_VALUE));
-                Instantiate(_player_4_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_4, new Vector3(4, 0, INIT_Z_VALUE));
+                Instantiate(_player_1_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_1, new Vector3(-15, 0, INIT_Z_VALUE));
+                Instantiate(_player_2_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_2, new Vector3(-9, 0, INIT_Z_VALUE));
+                Instantiate(_player_3_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_3, new Vector3(-3, 0, INIT_Z_VALUE));
+                Instantiate(_player_4_Prefab, _playerParentTransform).GetComponentInChildren<PlayerController>().Init(GlobalDefine.EPlayerNumber.Player_4, new Vector3(3, 0, INIT_Z_VALUE));
                 break;
             case GlobalDefine.EGameSceneType.GameScene_2:
                 break;
