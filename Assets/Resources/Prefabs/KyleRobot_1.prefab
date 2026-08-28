@@ -398,7 +398,7 @@ PrefabInstance:
       addedObject: {fileID: 3432370432978594897}
     - targetCorrespondingSourceObject: {fileID: 4477978763947009247, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7661584720645985971}
+      addedObject: {fileID: 8677616224864500538}
   m_SourcePrefab: {fileID: 100100000, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
 --- !u!4 &266591748130592287 stripped
 Transform:
@@ -420,7 +420,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4477978763947009247, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
   m_PrefabInstance: {fileID: 8255594775270757694}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7661584720645985971
+--- !u!114 &8677616224864500538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -429,12 +429,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5527388166993506785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bddebb1314e75489aff291b8c762c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 29258003cd4b2f443913dd713292d28b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PoseBinder
+  m_EditorClassIdentifier: Assembly-CSharp::JsonPoseTransformUpdater
   _animator: {fileID: 2592760691934177455}
-  _applyOptionalBones: 0
-  _rotationLerpSpeed: 6
+  _positionTarget: {fileID: 8970322396046677608}
 --- !u!4 &6177054361742901972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6401711273701861398, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
@@ -443,6 +442,11 @@ Transform:
 --- !u!4 &8438473327213343445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
+  m_PrefabInstance: {fileID: 8255594775270757694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8970322396046677608 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8147786864355294378, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
   m_PrefabInstance: {fileID: 8255594775270757694}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &9101962196100360303 stripped
