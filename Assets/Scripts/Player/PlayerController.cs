@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerCollider[] _colliders;
+
+    public PlayerCollider[] PlayerColliders { get { return _colliders; } }
+
     public GlobalDefine.EPlayerNumber EPlayerNumber { get; private set; }
     public void Init(GlobalDefine.EPlayerNumber ePlayerNumber, Vector3 localPos)
     {

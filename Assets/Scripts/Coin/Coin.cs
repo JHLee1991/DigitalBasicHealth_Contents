@@ -6,7 +6,6 @@ public class Coin : MonoBehaviour
     [SerializeField] private GameObject _coinBody;
     [SerializeField] private ParticleSystem _shinyPaticle;
 
-    private LayerMask _playerLayer;
     private bool _isCollidedWithPlayer;
 
     public void Init()
@@ -19,21 +18,15 @@ public class Coin : MonoBehaviour
         SetActiveObjects(false);
     }
 
-    private void Start()
-    {
-        _playerLayer = LayerMask.NameToLayer("Player");
-    }
-
-    private void OnTriggerEnter(Collider other)
+    public bool TryCollect()
     {
         if (_isCollidedWithPlayer)
         {
-            return;
+            return false;
         }
-        if (other.gameObject.layer == _playerLayer)
-        {
-            SetActiveObjects(false);
-        }
+
+        SetActiveObjects(false);
+        return true;
     }
 
     private void SetActiveObjects(bool isActive)

@@ -3,26 +3,47 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class PlayerCollider : MonoBehaviour
 {
-    private PlayerController _ownerPC;
-    private LayerMask _coinLayer;
+    [SerializeField] private CoinCollectUIEffect _coinCollectUIEffect;
 
-    void Start()
+    private PlayerController _ownerPC;
+    private int _coinLayer;
+
+    private void Start()
     {
         _ownerPC = GetComponentInParent<PlayerController>();
         Debug.Assert(_ownerPC != null);
         _coinLayer = LayerMask.NameToLayer("Coin");
+
+        if (_coinCollectUIEffect == null)
+        {
+            _coinCollectUIEffect =
+                GetComponentInChildren<CoinCollectUIEffect>(true);
+        }
+    }
+
+    // Playerê°€ ë™ì ìœ¼ë¡œ ìƒì„±ë˜ê³  UIê°€ Sceneì— ìˆì„ ë•Œ SpawnManagerì—ì„œ ì£¼ì…í•œë‹¤.
+    public void SetCoinCollectUIEffect(CoinCollectUIEffect effect)
+    {
+        _coinCollectUIEffect = effect;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == _coinLayer)
+        if (other.gameObject.layer != _coinLayer)
         {
-            if (other.GetComponentInParent<Coin>() != null)
-            {
-                // TODO : 26-08-25 [Ace ÀÌ°÷ Á¡¼ö Áßº¹ ÆÇÁ¤ µÉ ¼ö ÀÖÀ½. ³ªÁß¿¡ Ã¼Å©ÇØ¾ßÇÔ]
-                _ownerPC.AddCoinScore();
-                EffectManager.Instance.PlayCoinHitParticle(other.transform.position);
-            }
+            return;
         }
+
+        Coin coin = other.GetComponentInParent<Coin>();
+        if (coin == null || !coin.TryCollect())
+        {
+            return;
+        }
+
+        Vector3 collectWorldPosition = other.transform.position;
+
+        _ownerPC.AddCoinScore();
+        EffectManager.Instance.PlayCoinHitParticle(collectWorldPosition);
+        _coinCollectUIEffect?.Play(collectWorldPosition);
     }
 }
