@@ -10,7 +10,6 @@ public class CoinCollectUIEffect : MonoBehaviour
         public Image Image;
         public Vector2 Start;
         public Vector2 BurstEnd;
-        public float Delay;
         public float Elapsed;
     }
 
@@ -21,28 +20,33 @@ public class CoinCollectUIEffect : MonoBehaviour
     [SerializeField] private RectTransform _effectRoot;
     [Tooltip("코인 이미지가 최종적으로 모일 UI 위치입니다.")]
     [SerializeField] private RectTransform _collectTarget;
+    [Tooltip("코인이 도착했을 때 Scale Tween을 재생할 대상입니다.")]
+    [SerializeField] private CoinCollectingTarget _collectingTarget;
     [Tooltip("Project 창의 코인 Sprite를 넣습니다.")]
     [SerializeField] private Sprite _coinSprite;
 
     [Header("Icon")]
-    private int _iconCount = 1;
     [Min(1)] [SerializeField] private int _initialPoolSize = 20;
     [SerializeField] private Vector2 _iconSize = new Vector2(64f, 64f);
 
     [Header("Motion")]
-    [Min(0.01f)] [SerializeField] private float _duration = 0.65f;
-    [Min(0f)] [SerializeField] private float _staggerDelay = 0.04f;
-    [Min(0f)] [SerializeField] private float _burstRadius = 90f;
-    [Min(0f)] [SerializeField] private float _arcHeight = 80f;
-    [Range(0.05f, 0.8f)] [SerializeField] private float _burstRatio = 0.3f;
+    [Min(0.01f)] [SerializeField] private float _duration = 0.65f;          // 코인 이미지 하나가 움직이기 시작한 후 목표 지점에 도착하기까지 걸리는 시간
+    [Min(0f)] [SerializeField] private float _staggerDelay = 0.04f;         // 여러 코인 이미지가 움직이기 시작하는 시간 간격
+    [Min(0f)] [SerializeField] private float _burstRadius = 90f;            // 코인 이미지가 생성된 직후 충돌 위치 주변으로 얼마나 멀리 퍼지는지를 결정
+    [Min(0f)] [SerializeField] private float _arcHeight = 80f;              // 코인이 흩어진 지점에서 ScoreTarget으로 이동할 때 곡선이 얼마나 위로 휘어지는지 결정
+    [Range(0.05f, 0.8f)] [SerializeField] private float _burstRatio = 0.3f; // 전체 이동 시간 중에서 처음 퍼지는 동작에 사용할 비율
+                                                                            // 기본값은 0.3이므로: 전체 시간의 30% → 주변으로 퍼짐, 전체 시간의 70% → ScoreTarget으로 이동
 
     private readonly Queue<Image> _imagePool = new Queue<Image>();
+    private readonly Queue<Vector2> _pendingSpawnPositions =
+        new Queue<Vector2>();
     private readonly Stack<IconMotion> _motionPool = new Stack<IconMotion>();
     private readonly List<IconMotion> _activeMotions = new List<IconMotion>();
 
     private Canvas _canvas;
     private Camera _uiCamera;
     private bool _isInitialized;
+    private float _nextSpawnTime;
 
     private void Awake()
     {
@@ -58,6 +62,12 @@ public class CoinCollectUIEffect : MonoBehaviour
         if (_canvas != null && _canvas.renderMode != RenderMode.ScreenSpaceOverlay)
         {
             _uiCamera = _canvas.worldCamera;
+        }
+
+        if (_collectingTarget == null && _collectTarget != null)
+        {
+            _collectingTarget =
+                _collectTarget.GetComponent<CoinCollectingTarget>();
         }
 
         if (!ValidateReferences())
@@ -103,13 +113,13 @@ public class CoinCollectUIEffect : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < _iconCount; i++)
-        {
-            SpawnIcon(start, i * _staggerDelay);
-        }
+        // 충돌 한 번당 이미지 생성 요청은 정확히 하나만 추가한다.
+        // 거의 동시에 여러 Coin이 충돌하면 요청들이 Queue에 쌓이고,
+        // Update에서 _staggerDelay 간격으로 하나씩 실제 생성된다.
+        _pendingSpawnPositions.Enqueue(start);
     }
 
-    private void SpawnIcon(Vector2 start, float delay)
+    private void SpawnIcon(Vector2 start)
     {
         Image image = GetImage();
         RectTransform iconTransform = image.rectTransform;
@@ -135,25 +145,20 @@ public class CoinCollectUIEffect : MonoBehaviour
         motion.Image = image;
         motion.Start = start;
         motion.BurstEnd = start + randomDirection * randomRadius;
-        motion.Delay = delay;
         motion.Elapsed = 0f;
         _activeMotions.Add(motion);
     }
 
     private void Update()
     {
+        SpawnPendingIcon();
+
         for (int i = _activeMotions.Count - 1; i >= 0; i--)
         {
             IconMotion motion = _activeMotions[i];
             motion.Elapsed += Time.unscaledDeltaTime;
 
-            float movementTime = motion.Elapsed - motion.Delay;
-            if (movementTime < 0f)
-            {
-                continue;
-            }
-
-            float normalizedTime = Mathf.Clamp01(movementTime / _duration);
+            float normalizedTime = Mathf.Clamp01(motion.Elapsed / _duration);
             UpdateMotion(motion, normalizedTime);
 
             if (normalizedTime >= 1f)
@@ -161,6 +166,32 @@ public class CoinCollectUIEffect : MonoBehaviour
                 ReleaseMotion(i, motion);
             }
         }
+    }
+
+    private void SpawnPendingIcon()
+    {
+        if (_pendingSpawnPositions.Count == 0)
+        {
+            return;
+        }
+
+        if (_staggerDelay <= 0f)
+        {
+            while (_pendingSpawnPositions.Count > 0)
+            {
+                SpawnIcon(_pendingSpawnPositions.Dequeue());
+            }
+
+            return;
+        }
+
+        if (Time.unscaledTime < _nextSpawnTime)
+        {
+            return;
+        }
+
+        SpawnIcon(_pendingSpawnPositions.Dequeue());
+        _nextSpawnTime = Time.unscaledTime + _staggerDelay;
     }
 
     private void UpdateMotion(IconMotion motion, float normalizedTime)
@@ -242,6 +273,8 @@ public class CoinCollectUIEffect : MonoBehaviour
 
     private void ReleaseMotion(int index, IconMotion motion)
     {
+        _collectingTarget?.PlayScaleTween();
+
         motion.Image.gameObject.SetActive(false);
         _imagePool.Enqueue(motion.Image);
         motion.Image = null;
