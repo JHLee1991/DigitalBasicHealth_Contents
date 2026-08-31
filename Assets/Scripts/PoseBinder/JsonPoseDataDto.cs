@@ -3,17 +3,17 @@ using System;
 [Serializable]
 public sealed class JsonPoseDataDto
 {
-    public float[] position;
-    public float[] Hips;
-    public float[] RightUpLeg;
-    public float[] LeftUpLeg;
-    public float[] RightLeg;
-    public float[] LeftLeg;
-    public float[] RightArm;
-    public float[] LeftArm;
-    public float[] RightForeArm;
-    public float[] LeftForeArm;
-    public float[] Spine2;
+    public readonly float[] position = new float[3];
+    public readonly float[] Hips = new float[4];
+    public readonly float[] RightUpLeg = new float[4];
+    public readonly float[] LeftUpLeg = new float[4];
+    public readonly float[] RightLeg = new float[4];
+    public readonly float[] LeftLeg = new float[4];
+    public readonly float[] RightArm = new float[4];
+    public readonly float[] LeftArm = new float[4];
+    public readonly float[] RightForeArm = new float[4];
+    public readonly float[] LeftForeArm = new float[4];
+    public readonly float[] Spine2 = new float[4];
 
     public bool HasValidLengths()
     {

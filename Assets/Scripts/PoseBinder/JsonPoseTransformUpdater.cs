@@ -49,28 +49,19 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
     {
         if (_animator == null || !_animator.isHuman)
         {
-            Debug.LogError(
-                $"[{nameof(JsonPoseTransformUpdater)}] Humanoid Animator를 찾을 수 없습니다.",
-                this);
+            Debug.LogError($"[{nameof(JsonPoseTransformUpdater)}] Humanoid Animator를 찾을 수 없습니다.", this);
             enabled = false;
             return;
         }
 
         for (int i = 0; i < HumanBones.Length; i++)
         {
-            _bones[i] = i == SPINE2_BONE_INDEX
-                ? FindSpine2Transform()
-                : _animator.GetBoneTransform(HumanBones[i]);
+            _bones[i] = i == SPINE2_BONE_INDEX ? FindSpine2Transform() : _animator.GetBoneTransform(HumanBones[i]);
 
             if (_bones[i] == null)
             {
-                string boneName = i == SPINE2_BONE_INDEX
-                    ? "Spine2 (UpperChest, Chest, Spine)"
-                    : HumanBones[i].ToString();
-
-                Debug.LogWarning(
-                    $"[{nameof(JsonPoseTransformUpdater)}] {boneName} 본을 찾지 못했습니다.",
-                    this);
+                string boneName = i == SPINE2_BONE_INDEX ? "Spine2 (UpperChest, Chest, Spine)" : HumanBones[i].ToString();
+                Debug.LogWarning($"[{nameof(JsonPoseTransformUpdater)}] {boneName} 본을 찾지 못했습니다.", this);
             }
         }
 
@@ -143,6 +134,7 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
         Transform bone = _bones[boneIndex];
         if (bone == null)
         {
+            Debug.Assert(false, "[JsonPoseTransformUpdater] _bones[boneIndex] is NULL!!");
             return;
         }
 
