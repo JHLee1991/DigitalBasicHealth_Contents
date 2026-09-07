@@ -27,6 +27,7 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
     [SerializeField] private Transform _positionTarget;
 
     private readonly Transform[] _bones = new Transform[HumanBones.Length];
+    private readonly Quaternion[] _initialLocalRotations = new Quaternion[HumanBones.Length];
     private uint _lastAppliedFrameVersion;
     private bool _isInitialized;
 
@@ -62,7 +63,10 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
             {
                 string boneName = i == SPINE2_BONE_INDEX ? "Spine2 (UpperChest, Chest, Spine)" : HumanBones[i].ToString();
                 Debug.LogWarning($"[{nameof(JsonPoseTransformUpdater)}] {boneName} 본을 찾지 못했습니다.", this);
+                continue;
             }
+
+           _initialLocalRotations [i] = _bones[i].localRotation;
         }
 
         _isInitialized = true;
@@ -111,10 +115,10 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
     {
         if (_positionTarget != null)
         {
-            _positionTarget.localPosition = new Vector3(
-                pose.position[0],
-                pose.position[1],
-                pose.position[2]);
+            //_positionTarget.localPosition = new Vector3(
+            //    pose.position[0],
+            //    pose.position[1],
+            //    pose.position[2]);
         }
 
         ApplyLocalRotation(0, pose.Hips);
@@ -137,11 +141,9 @@ public sealed class JsonPoseTransformUpdater : MonoBehaviour
             Debug.Assert(false, "[JsonPoseTransformUpdater] _bones[boneIndex] is NULL!!");
             return;
         }
-
-        bone.localRotation = new Quaternion(
-            values[0],
-            values[1],
-            values[2],
-            values[3]);
+        Debug.Log($"Received Qut {HumanBones[boneIndex]}'s Qut[X:{values[0]}, Y:{values[1]}, Z:{values[2]}, W:{values[3]}]");
+        Quaternion receivedRotation = new(values[0], values[1],  values[2], values[3]);
+        bone.localRotation = _initialLocalRotations[boneIndex] * receivedRotation;
+        Debug.Log($"bone.localRotation {HumanBones[boneIndex]}'s Qut[X:{bone.localRotation.x}, Y:{bone.localRotation.y}, Z:{bone.localRotation.z}, W:{bone.localRotation.w}]");
     }
 }

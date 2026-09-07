@@ -120,7 +120,7 @@ public sealed class JsonPoseUdpReceiver : MonoBehaviour
             try
             {
                 int receivedLength = _udpClient.Client.Receive(_receiveBuffer, 0, _receiveBuffer.Length, SocketFlags.None);
-
+                Debug.Log($"Data Received!!! receivedLength :{receivedLength}");
                 if (receivedLength <= 0)
                 {
                     continue;
@@ -130,6 +130,7 @@ public sealed class JsonPoseUdpReceiver : MonoBehaviour
                 {
                     Buffer.BlockCopy(_receiveBuffer, 0, _pendingBuffer, 0, receivedLength);
                     _pendingLength = receivedLength;
+                    Debug.Log($"Buffer.BlockCopy(_receiveBuffer, 0, _pendingBuffer, 0, receivedLength)");
                 }
             }
             catch (SocketException exception)
