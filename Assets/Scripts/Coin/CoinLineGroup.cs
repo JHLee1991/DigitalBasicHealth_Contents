@@ -8,6 +8,7 @@ public class CoinLineGroup : MonoBehaviour
     private ObjectPool<CoinLineGroup> _pool;
     private const float MOVE_RANGE = 0.5f;
     private const float MOVE_SPEED = 0.8f;
+    private const float Z_MOVE_SPEED = 3f;
     private const float HIDE_TIME_IN_SEC = 12f;
     private float _hideTimeTimer;
     private float _moveTimer;
@@ -23,6 +24,7 @@ public class CoinLineGroup : MonoBehaviour
     {
         _isTimerStarted = true;
         _hideTimeTimer = 0f;
+        _moveTimer = 0f;
         transform.localPosition = new Vector3(0, 0, initZPos);
         _initialLocalPosition = transform.localPosition;
         foreach (CoinLine coinLine in _coinLines)
@@ -43,8 +45,13 @@ public class CoinLineGroup : MonoBehaviour
     private void UpdateMovement()
     {
         _moveTimer += Time.deltaTime;
+
         float xOffset = Mathf.PingPong((_moveTimer * MOVE_SPEED) + MOVE_RANGE, MOVE_RANGE * 2f) - MOVE_RANGE;
-        transform.localPosition = _initialLocalPosition + Vector3.right * xOffset;
+
+        Vector3 currentPosition = transform.localPosition;
+        currentPosition.x = _initialLocalPosition.x + xOffset;
+        currentPosition.z -= Z_MOVE_SPEED * Time.deltaTime;
+        transform.localPosition = currentPosition;
     }
     private void UpdateHideTimer()
     {

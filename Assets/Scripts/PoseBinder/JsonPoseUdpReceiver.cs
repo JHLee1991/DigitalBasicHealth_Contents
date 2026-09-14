@@ -23,7 +23,7 @@ public sealed class JsonPoseUdpReceiver : MonoBehaviour
     private readonly byte[] _receiveBuffer = new byte[MAX_DATAGRAM_SIZE];
     private readonly byte[] _pendingBuffer = new byte[MAX_DATAGRAM_SIZE];
     private readonly byte[] _parseBuffer = new byte[MAX_DATAGRAM_SIZE];
-    private readonly object _bufferLock = new object();
+    private readonly object _bufferLock = new();
 
     private UdpClient _udpClient;
     private Thread _receiveThread;

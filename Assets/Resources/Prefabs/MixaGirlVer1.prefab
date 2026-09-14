@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6268238552560437597, guid: 57d4d188f7a0abb4cb5d1c6aaa8816fa, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6058681868354798846, guid: 57d4d188f7a0abb4cb5d1c6aaa8816fa, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
@@ -55,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57d4d188f7a0abb4cb5d1c6aaa8816fa, type: 3}
       propertyPath: m_Name
       value: mixa_Girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761708314861323176, guid: 57d4d188f7a0abb4cb5d1c6aaa8816fa, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
