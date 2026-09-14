@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerCollider[] _colliders;
+
+    public UnityEvent AddScoreEventHandler = new();
 
     public PlayerCollider[] PlayerColliders { get { return _colliders; } }
 
@@ -29,5 +32,11 @@ public class PlayerController : MonoBehaviour
     }
     public void AddCoinScore()
     {
+        AddScoreEventHandler.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        AddScoreEventHandler.RemoveAllListeners();
     }
 }

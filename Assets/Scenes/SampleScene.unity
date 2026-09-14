@@ -1342,6 +1342,56 @@ MonoBehaviour:
   _playersParentTransform: {fileID: 536487642}
   _coinLineGroupPool: {fileID: 443652994}
   _initZPos: 20
+--- !u!1 &699163024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699163025}
+  - component: {fileID: 699163026}
+  m_Layer: 0
+  m_Name: UI_CoinCollectingScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699163025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699163024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1027982031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699163026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699163024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55baa1c86a2ac64b9fe3856ea3fadda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_CoinCollectingGameScoreManager
+  _playerSpawnManager: {fileID: 25787247}
+  _playerScoreTexts:
+  - {fileID: 4861801452921559099}
+  - {fileID: 805944670}
+  - {fileID: 1032217471}
+  - {fileID: 1098293807}
 --- !u!1 &775461738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1573,14 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 3325468065096072778, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8186627383843748244, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 1920
@@ -1649,6 +1707,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &805944669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 805944665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &805944670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322037195710031525, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 805944665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71daea513e5145e4e9e2761b13d838af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_PlayerScoreText
 --- !u!1001 &819877790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1818,6 +1892,7 @@ Transform:
   - {fileID: 1566278607}
   - {fileID: 1162934640}
   - {fileID: 1774289842}
+  - {fileID: 699163025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1032217466
@@ -1843,6 +1918,14 @@ PrefabInstance:
     - target: {fileID: 2803827794090379248, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_PlaneDistance
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325468065096072778, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186627383843748244, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -1970,6 +2053,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &1032217470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 1032217466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032217471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322037195710031525, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 1032217466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71daea513e5145e4e9e2761b13d838af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_PlayerScoreText
 --- !u!1001 &1098293802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1993,6 +2092,14 @@ PrefabInstance:
     - target: {fileID: 2803827794090379248, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_PlaneDistance
       value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325468065096072778, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186627383843748244, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -2120,6 +2227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &1098293806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 1098293802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1098293807 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322037195710031525, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 1098293802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71daea513e5145e4e9e2761b13d838af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_PlayerScoreText
 --- !u!1 &1162934639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdc652e93408b44d8ff5c3ae6682e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_GameStartTimerManager
+  _coinUITargetGameObjects:
+  - {fileID: 4861801452921559098}
+  - {fileID: 805944669}
+  - {fileID: 1032217470}
+  - {fileID: 1098293806}
   _gameStartTimerTexts:
   - {fileID: 4861801452921559096}
   - {fileID: 805944667}
@@ -3488,6 +3616,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3325468065096072778, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 6566136493677745589, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3519,6 +3651,10 @@ PrefabInstance:
     - target: {fileID: 6566136493677745589, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 409.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8186627383843748244, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -3646,6 +3782,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &4861801452921559098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615843134666416949, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 4861801452921559094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4861801452921559099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1322037195710031525, guid: cf0aa57d0d4b388459a386fe18344bf0, type: 3}
+  m_PrefabInstance: {fileID: 4861801452921559094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71daea513e5145e4e9e2761b13d838af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_PlayerScoreText
 --- !u!1001 &6548770851423434830
 PrefabInstance:
   m_ObjectHideFlags: 0

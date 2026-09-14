@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class UI_GameStartTimerManager : MonoBehaviour
+public class UI_CoinCollectingGameStartTimerManager : MonoBehaviour
 {
-    public static UI_GameStartTimerManager Instance;
+    public static UI_CoinCollectingGameStartTimerManager Instance;
 
+    [SerializeField] private GameObject[] _coinUITargetGameObjects;
     [SerializeField] private TMP_Text[] _gameStartTimerTexts;
     [SerializeField] private Image[] _gameStartImgs;
 
@@ -66,6 +67,7 @@ public class UI_GameStartTimerManager : MonoBehaviour
         for (int i = 0; i < 4; ++i)
         {
             _gameStartImgs[i].gameObject.SetActive(true);
+            _coinUITargetGameObjects[i].SetActive(true);
         }
         CoinCollectingGameStartEventHandler.Invoke();
     }

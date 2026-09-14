@@ -3,9 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class PlayerCollider : MonoBehaviour
 {
-    [SerializeField] private CoinCollectUIEffect _coinCollectUIEffect;
-
     private PlayerController _ownerPC;
+    private CoinCollectUIEffect _coinCollectUIEffect;
     private int _coinLayer;
 
     private void Start()
@@ -14,11 +13,11 @@ public class PlayerCollider : MonoBehaviour
         Debug.Assert(_ownerPC != null);
         _coinLayer = LayerMask.NameToLayer("Coin");
 
-        if (_coinCollectUIEffect == null)
-        {
-            _coinCollectUIEffect =
-                GetComponentInChildren<CoinCollectUIEffect>(true);
-        }
+        //if (_coinCollectUIEffect == null)
+        //{
+        //    _coinCollectUIEffect =
+        //        GetComponentInChildren<CoinCollectUIEffect>(true);
+        //}
     }
 
     // Player가 동적으로 생성되고 UI가 Scene에 있을 때 SpawnManager에서 주입한다.

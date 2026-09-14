@@ -16,15 +16,15 @@ public class CoinSpawnManager : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Assert(UI_GameStartTimerManager.Instance != null);
-        UI_GameStartTimerManager.Instance.CoinCollectingGameStartEventHandler.AddListener(OnGameStartTimerReachToZero);
+        Debug.Assert(UI_CoinCollectingGameStartTimerManager.Instance != null);
+        UI_CoinCollectingGameStartTimerManager.Instance.CoinCollectingGameStartEventHandler.AddListener(OnGameStartTimerReachToZero);
     }
 
     private void OnDisable()
     {
-        if (UI_GameStartTimerManager.Instance != null)
+        if (UI_CoinCollectingGameStartTimerManager.Instance != null)
         {
-            UI_GameStartTimerManager.Instance.CoinCollectingGameStartEventHandler.RemoveListener(OnGameStartTimerReachToZero);
+            UI_CoinCollectingGameStartTimerManager.Instance.CoinCollectingGameStartEventHandler.RemoveListener(OnGameStartTimerReachToZero);
         }
     }
 

@@ -6,8 +6,8 @@ public class CoinLineGroup : MonoBehaviour
     [SerializeField] private CoinLine[] _coinLines;
 
     private ObjectPool<CoinLineGroup> _pool;
-    private const float MOVE_RANGE = 0.5f;
-    private const float MOVE_SPEED = 0.8f;
+    private const float X_MOVE_RANGE = 1f;
+    private const float X_MOVE_SPEED = 1f;
     private const float Z_MOVE_SPEED = 3f;
     private const float HIDE_TIME_IN_SEC = 12f;
     private float _hideTimeTimer;
@@ -46,7 +46,7 @@ public class CoinLineGroup : MonoBehaviour
     {
         _moveTimer += Time.deltaTime;
 
-        float xOffset = Mathf.PingPong((_moveTimer * MOVE_SPEED) + MOVE_RANGE, MOVE_RANGE * 2f) - MOVE_RANGE;
+        float xOffset = Mathf.PingPong((_moveTimer * X_MOVE_SPEED) + X_MOVE_RANGE, X_MOVE_RANGE * 2f) - X_MOVE_RANGE;
 
         Vector3 currentPosition = transform.localPosition;
         currentPosition.x = _initialLocalPosition.x + xOffset;

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,12 +17,21 @@ public class PlayerSpawnManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnPlayer(GlobalDefine.EGameSceneType.GameScene_1, GlobalDefine.EPlayerNumber.Player_1);
+        StopAllCoroutines();
+        StartCoroutine(SpawnPlayerAfter1Frame_Cor());
     }
     private void OnDestroy()
     {
         PlayerSpawnedEventHandler.RemoveAllListeners();
     }
+
+    // 26-09-14 16:15 [Ace 이벤트 구독 타이밍 이슈를 방지하기 위해 아예 1 프레임 쉬고 SpawnPlayer 호출하도록 함]
+    private IEnumerator SpawnPlayerAfter1Frame_Cor()
+    {
+        yield return null;
+        SpawnPlayer(GlobalDefine.EGameSceneType.GameScene_1, GlobalDefine.EPlayerNumber.Player_1);
+    }
+
 
     // TODO : 25-08-25 [Ace 이곳 나중에 고쳐야 함. 다 실제 데이터 연동해서 동적로딩 방식으로 해야함. 지금은 테스트용으로 이렇게 내비둠]
     private void SpawnPlayer(GlobalDefine.EGameSceneType eGameSceneType, GlobalDefine.EPlayerNumber ePlayerNumber)
