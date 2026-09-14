@@ -12,12 +12,6 @@ public class PlayerCollider : MonoBehaviour
         _ownerPC = GetComponentInParent<PlayerController>();
         Debug.Assert(_ownerPC != null);
         _coinLayer = LayerMask.NameToLayer("Coin");
-
-        //if (_coinCollectUIEffect == null)
-        //{
-        //    _coinCollectUIEffect =
-        //        GetComponentInChildren<CoinCollectUIEffect>(true);
-        //}
     }
 
     // Player가 동적으로 생성되고 UI가 Scene에 있을 때 SpawnManager에서 주입한다.
@@ -40,9 +34,13 @@ public class PlayerCollider : MonoBehaviour
         }
 
         Vector3 collectWorldPosition = other.transform.position;
-
         _ownerPC.AddCoinScore();
         EffectManager.Instance.PlayCoinHitParticle(collectWorldPosition);
-        _coinCollectUIEffect?.Play(collectWorldPosition);
+
+        Debug.Assert(_coinCollectUIEffect != null);
+        if (_coinCollectUIEffect != null)
+        {
+            _coinCollectUIEffect.Play(collectWorldPosition);
+        }
     }
 }

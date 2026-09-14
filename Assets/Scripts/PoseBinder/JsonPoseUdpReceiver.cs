@@ -14,7 +14,7 @@ public sealed class JsonPoseUdpReceiver : MonoBehaviour
 
     [Header("UDP")]
     [SerializeField] private int _receivePort = 4000;
-    [SerializeField] private bool _dontDestroyOnLoad = true;
+    //[SerializeField] private bool _dontDestroyOnLoad = true;
 
     public JsonPoseDataDto LatestPose { get; } = new JsonPoseDataDto();
     public bool HasPose { get; private set; }

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerSpawnManager : MonoBehaviour
 {
+
     public UnityEvent<PlayerController> PlayerSpawnedEventHandler = new();
 
     [SerializeField] private GameObject _player_1_Prefab;

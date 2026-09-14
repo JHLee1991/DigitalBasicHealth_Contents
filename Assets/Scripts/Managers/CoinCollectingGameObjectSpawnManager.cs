@@ -1,11 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class CoinSpawnManager : MonoBehaviour
+public class CoinCollectingGameObjectSpawnManager : MonoBehaviour
 {
-    [SerializeField] private Transform _playersParentTransform;
+    [Header("Coin")]
     [SerializeField] private CoinLineGroupObjectPool _coinLineGroupPool;
     [SerializeField] private float _initZPos = 20f;
+
+    [Header("Obstacle")]
+    [SerializeField] private ObstacleObjectPool _obstaclePool;
+    [SerializeField] private Transform[] _obstacleParentTransforms;
     private const int SPAWN_COIN_TIME_INTERVAL = 5;
 
     private void OnGameStartTimerReachToZero()
@@ -17,6 +21,9 @@ public class CoinSpawnManager : MonoBehaviour
     private void Start()
     {
         Debug.Assert(UI_CoinCollectingGameStartTimerManager.Instance != null);
+        Debug.Assert(_coinLineGroupPool != null);
+        Debug.Assert(_obstaclePool != null);
+        Debug.Assert(_obstacleParentTransforms != null && _obstacleParentTransforms.Length == 4);
         UI_CoinCollectingGameStartTimerManager.Instance.CoinCollectingGameStartEventHandler.AddListener(OnGameStartTimerReachToZero);
     }
 
@@ -32,12 +39,27 @@ public class CoinSpawnManager : MonoBehaviour
     {
         while (true)
         {
-            SpawnCoinGroup();
+            if (Random.Range(0, 2) == 0)
+            {
+                for (int i = 0; i < 4; ++i)
+                {
+                    SpawnObstacle(_obstacleParentTransforms[i]);
+                }
+            }
+            else
+            {
+                SpawnCoinGroup();
+            }
             yield return CoroutineManager.GetWaitForSec(SPAWN_COIN_TIME_INTERVAL);
         }
     }
     private void SpawnCoinGroup()
     {
         _coinLineGroupPool.SpawnCoinLineGroup((CoinLine.ECoinDirection)Random.Range(0, (int)CoinLine.ECoinDirection.Count), _initZPos);
+    }
+
+    private void SpawnObstacle(Transform parentTransform)
+    {
+        _obstaclePool.SpawnObstacle(parentTransform);
     }
 }
