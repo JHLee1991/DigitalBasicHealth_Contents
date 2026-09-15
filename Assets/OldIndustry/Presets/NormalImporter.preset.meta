@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bc43bd444bcb06343b1314dc347eb990
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Presets/NormalImporter.preset
+  uploadId: 625290

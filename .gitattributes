@@ -1,0 +1,2 @@
+Assets/OldIndustry/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/OldIndustry/**/*.png filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60304f3d9fa2bd346b4b45b6d64a61ec
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Models/Architecture/ConcreteWalls/Textures/Materials/ConcreteWall01b.mat
+  uploadId: 625290

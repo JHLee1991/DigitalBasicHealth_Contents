@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d466f8286ca5e64459d86f560ca9a7fb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Models/Terrains/Layers/Ground01.terrainlayer
+  uploadId: 625290

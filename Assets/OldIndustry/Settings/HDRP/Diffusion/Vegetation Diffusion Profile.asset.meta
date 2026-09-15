@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f815e091e0ce4cf44841322c78667fea
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Settings/HDRP/Diffusion/Vegetation Diffusion Profile.asset
+  uploadId: 625290

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3e0cb184266af440a7508dbd0b4eedb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Presets/FBXImporter.preset
+  uploadId: 625290

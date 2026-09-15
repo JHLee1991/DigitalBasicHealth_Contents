@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 60c23ba99897b784da3e351c1902c228
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Models/Architecture/Casting/Textures/Materials/Casting_End.mat
+  uploadId: 625290

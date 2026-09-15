@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 271bb43762b99d145a6030671f3fcfaa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Models/Architecture/Casting/Textures/Materials/Cast_LineStart.mat
+  uploadId: 625290

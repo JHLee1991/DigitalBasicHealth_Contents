@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d58193ccc4d72a04d848c8ec7218de3c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Presets/LightmapSettings.lighting
+  uploadId: 625290

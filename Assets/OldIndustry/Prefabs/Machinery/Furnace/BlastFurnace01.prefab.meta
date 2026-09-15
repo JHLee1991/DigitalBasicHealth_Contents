@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c1fb0a66012c42542a7cf74b0996c224
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Prefabs/Machinery/Furnace/BlastFurnace01.prefab
+  uploadId: 625290

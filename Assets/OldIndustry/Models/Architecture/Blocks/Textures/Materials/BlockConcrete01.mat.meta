@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b5d404c4230327743af82abb638436b5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212485
+  packageName: Old Industry
+  packageVersion: 1.0
+  assetPath: Assets/OldIndustry/Models/Architecture/Blocks/Textures/Materials/BlockConcrete01.mat
+  uploadId: 625290
